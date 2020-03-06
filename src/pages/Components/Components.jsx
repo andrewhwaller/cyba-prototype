@@ -30,30 +30,32 @@ import SectionDownload from "./Sections/SectionDownload.jsx";
 
 import componentsStyle from "assets/jss/material-kit-react/views/components.jsx";
 
+import '../index.scss';
+
 class Components extends React.Component {
   render() {
     const { classes, ...rest } = this.props;
     return (
       <div>
         <Header
-          brand="Material Kit React"
+          brand="The Christian Youth Band of Austin"
           rightLinks={<HeaderLinks />}
           fixed
           color="transparent"
           changeColorOnScroll={{
             height: 400,
-            color: "white"
+            color: "dark"
           }}
           {...rest}
         />
-        <Parallax image={require("assets/img/bg4.jpg")}>
+        <Parallax image={require("assets/img/bg-concert.jpeg")}>
           <div className={classes.container}>
             <GridContainer>
               <GridItem>
                 <div className={classes.brand}>
-                  <h1 className={classes.title}>Material Kit React.</h1>
+                  <h1 className={classes.title} classes={{ root: 'brandSerif' }}><small><em>the</em></small> Christian Youth Band <small><em>of</em></small> Austin</h1>
                   <h3 className={classes.subtitle}>
-                    Hey, it's-a me, Mario
+                    Building up life-long musicians in the Live Music Capitol
                   </h3>
                 </div>
               </GridItem>
@@ -66,21 +68,9 @@ class Components extends React.Component {
           <SectionNavbars />
           <SectionTabs />
           <SectionPills />
-          <SectionNotifications />
-          <SectionTypography />
           <SectionJavascript />
           <SectionCarousel />
-          <SectionCompletedExamples />
-          <SectionLogin />
-          <GridItem md={12} className={classes.textCenter}>
-            <Link to={"/login-page"} className={classes.link}>
-              <Button color="primary" size="lg" simple>
-                View Login Page
-              </Button>
-            </Link>
-          </GridItem>
           <SectionExamples />
-          <SectionDownload />
         </div>
         <Footer />
       </div>
